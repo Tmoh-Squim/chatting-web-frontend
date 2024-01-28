@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useEffect,useState} from "react";
+import "./App.css"
+import {Routes,Route} from "react-router-dom"
+import {io} from "socket.io-client"
+import MainContainer from "./component/MainContainer"
+import ChatContainer from "./component/ChatContainer"
+import Register from "./auth/Register"
+import Login from "./auth/Login"
+import {useDispatch,useSelector} from "react-redux"
+import store from "./redux/store"
+import {LoadUser,getAllusers} from "./redux/users"
+import {getAllConversation} from "./redux/conversations"
 
+const ENDPOINT = "https://chatting-socket-c5k9.onrender.com"
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const dispatch = useDispatch()
+  const [onlineUsers,setOnlineUsers] = useState([])
+  const {user} = useSelector((state)=>state.user)
+  const socket = io(ENDPOINT, { transports: ["websocket"] })
+  useEffect(() => {
+    store.dispatch(LoadUser())
+    store.dispatch(getAllusers())
+  }, [store]);
+  useEffect(() => {
+    const id = user?.user?._id
+    dispatch(getAllConversation(id))
+  }, [user]);
+
+  useEffect(() => {
+    const id = user?.user?._id
+    socket.emit('connection')
+    socket.emit('join',({userId:id}))
+    socket.on('getUsers',(data)=>{
+      setOnlineUsers(data)
+    })
+  }, [user]);
+  
+  return <>
+      <Routes>
+        <Route path="/" element={<MainContainer />} />
+        <Route path="/chat/:id" element={<ChatContainer />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+  </>
 }
 
 export default App;
