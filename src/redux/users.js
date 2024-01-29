@@ -3,7 +3,7 @@ import axios from "axios"
 export const LoadUser = createAsyncThunk('loadUser',async()=>{
     try {
         const token = `${localStorage.getItem('token')}`
-        const res = await axios.get('http://localhost:8081/api/v1/auth/getUser',{
+        const res = await axios.get('https://chatting-web-app-2xe3.onrender.com/api/v1/auth/getUser',{
             headers:{
                 'Authorization':token
             }
@@ -16,7 +16,7 @@ export const LoadUser = createAsyncThunk('loadUser',async()=>{
 export const getAllusers =  createAsyncThunk('all-users',async()=>{
     try {
         const token = `${localStorage.getItem('token')}`
-        const res = await axios.get('http://localhost:8081/api/v1/auth/all-users',{
+        const res = await axios.get('https://chatting-web-app-2xe3.onrender.com/api/v1/auth/all-users',{
             headers:{
                 'Authorization':token
             }

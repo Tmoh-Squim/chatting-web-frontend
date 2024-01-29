@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 import {io} from "socket.io-client"
 import Layout from "./layout/layout"
 import {useSelector} from "react-redux"
-const ENDPOINT = "http://localhost:8080"
+const ENDPOINT = "https://chatting-socket-c5k9.onrender.com"
 function MainContainer() {
   const {user} = useSelector((state)=>state.user?.user)
   const userId = user?._id

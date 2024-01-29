@@ -2,7 +2,7 @@ import {createAsyncThunk,createSlice} from "@reduxjs/toolkit"
 import axios from "axios"
 export const getAllConversation = createAsyncThunk('user-conversations',async(id)=>{
     const token = `${localStorage.getItem('token')}`
-    const response = await axios.get(`http://localhost:8081/api/v2/conversation/user-conversation/${id}`,{
+    const response = await axios.get(`https://chatting-web-app-2xe3.onrender.com/api/v2/conversation/user-conversation/${id}`,{
         headers:{
             'Authorization':token
         }
