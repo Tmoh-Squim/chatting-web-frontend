@@ -179,7 +179,7 @@ function Sidebar() {
               })}
             </>
           ) : (
-            <div className="h-screen w-full justify-center items-center">
+            <div className="h-screen w-full flex justify-center items-center">
               <h2 className="text-black text-xl text-center">
                 You don't have any chats to view
               </h2>
