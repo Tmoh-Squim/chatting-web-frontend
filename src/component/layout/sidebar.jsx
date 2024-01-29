@@ -129,7 +129,7 @@ function Sidebar() {
                     >
                       <div className="mt-2 flex items-center cursor-pointer justify-between">
                         <div className="flex items-center">
-                          <div className="w-[35px] h-[35px] rounded-full relative bg-gray-500 justify-center items-center">
+                          <div className="w-[35px] h-[35px] flex rounded-full relative bg-gray-500 justify-center items-center">
                             <h3 className="text-xl text-black text-center">
                               {initialLetter}
                             </h3>

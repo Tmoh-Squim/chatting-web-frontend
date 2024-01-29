@@ -131,7 +131,7 @@ function Chatlayout() {
         </div>
         <div className="ml-2 w-[100%] 800px:w-[75%] relative justify-between flex flex-col h-screen bg-white">
         <div className="bg-blue-400 h-[65px] w-full px-2">
-          <div className="w-[50px] h-[50px]  rounded-full justify-center items-center bg-neutral-400">
+          <div className="w-[50px] h-[50px] flex  rounded-full justify-center items-center bg-neutral-400">
             <h2 className="text-red-500 font-bold  text-center text-xl">
               {receiver?.name[0]}
             </h2>
