@@ -152,7 +152,7 @@ function Chatlayout() {
                       } flex w-full my-1.5 `}
                     >
                       {senderMessage ? (
-                        <div className="flex flex-col w-[65%] justify-end items-end">
+                        <div className="flex flex-col w-[70%] justify-end items-end">
                           <p
                             className=" bg-blue-500 p-1 text-end text-black rounded-xl h-min inline-block "
                             style={{ maxWidth: "fit-content" }}
@@ -166,7 +166,7 @@ function Chatlayout() {
                           </p>
                         </div>
                       ) : (
-                        <div className="flex flex-col w-[65%]">
+                        <div className="flex flex-col w-[70%]">
                           <div
                             className=" bg-neutral-500 p-1 text-black rounded-lg h-min inline-block"
                             style={{ maxWidth: "fit-content" }}
@@ -199,11 +199,11 @@ function Chatlayout() {
                   onChange={(e) => setText(e.target.value)}
                 />
               </div>
-              <div className="absolute bottom-4 left-2 800px:left-[25%]">
+              <div className="absolute bottom-4 left-2.5 800px:left-[25%]">
                 <AiOutlinePaperClip size={28} color="gray" />
               </div>
               <div
-                className="absolute bottom-4 right-2 800px:right-[26%]"
+                className="absolute bottom-4 right-2.5 800px:right-[26%]"
                 onClick={handleChat}
               >
                 <AiOutlineSend size={28} color="gray" />
