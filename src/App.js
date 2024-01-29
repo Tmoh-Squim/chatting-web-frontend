@@ -15,19 +15,19 @@ const ENDPOINT = "https://chatting-socket-c5k9.onrender.com"
 function App() {
   const dispatch = useDispatch()
   const [onlineUsers,setOnlineUsers] = useState([])
-  const {user} = useSelector((state)=>state.user)
+  const {user} = useSelector((state)=>state.user?.user)
   const socket = io(ENDPOINT, { transports: ["websocket"] })
   useEffect(() => {
     store.dispatch(LoadUser())
     store.dispatch(getAllusers())
   }, [store]);
   useEffect(() => {
-    const id = user?.user?._id
+    const id = user?._id
     dispatch(getAllConversation(id))
   }, [user]);
 
   useEffect(() => {
-    const id = user?.user?._id
+    const id = user?._id
     socket.emit('connection')
     socket.emit('join',({userId:id}))
     socket.on('getUsers',(data)=>{
