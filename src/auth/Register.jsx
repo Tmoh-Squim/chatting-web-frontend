@@ -135,7 +135,7 @@ function Register() {
           <button type="submit" onClick={handleSubmit} className="p-2 bg-red-500 rounded-lg w-[30%] my-2 mx-2">
             <h2 className="text-xl text-white font-semibold text-center">Submit</h2>
           </button>
-          <p>already have an account? <Link to="/login">Login</Link></p> 
+          <p>already have an account? <Link to="/login" className="text-blue-500">Login</Link></p> 
         </div>
       </div>
     </>

@@ -80,9 +80,8 @@ function Login() {
           <button type="submit" onClick={handleSubmit} className="p-2 bg-red-500 rounded-lg w-[30%] my-2 mx-2">
             <h2 className="text-xl text-white font-semibold text-center">Login</h2>
           </button>
+          <p>don't have an account? <Link to="/register" className="text-blue-500">Create</Link></p> 
         </div>
-
-       <p>don't have an account? <Link to="/register">Create</Link></p> 
       </div>
   </>;
 }
