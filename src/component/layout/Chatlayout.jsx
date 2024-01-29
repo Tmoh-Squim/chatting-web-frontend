@@ -125,7 +125,7 @@ function Chatlayout() {
 
   return (
     <>
-      <div className="flex 800px:mx-5">
+      <div className="flex 800px:mx-5 !m-0">
         <div className=" 800px:w-[25%] hidden 800px:block overflow-y-scroll h-screen bg-white">
           <Sidebar />
         </div>
@@ -154,7 +154,7 @@ function Chatlayout() {
                       {senderMessage ? (
                         <div className="flex flex-col w-[65%] justify-end items-end">
                           <p
-                            className=" bg-blue-500 p-2 text-end font-semibold text-black rounded-xl h-min inline-block "
+                            className=" bg-blue-500 p-1 text-end text-black rounded-xl h-min inline-block "
                             style={{ maxWidth: "fit-content" }}
                           >
                             {message.text}
@@ -168,7 +168,7 @@ function Chatlayout() {
                       ) : (
                         <div className="flex flex-col w-[65%]">
                           <div
-                            className=" bg-neutral-500 p-2 font-semibold text-black rounded-lg h-min inline-block"
+                            className=" bg-neutral-500 p-1 text-black rounded-lg h-min inline-block"
                             style={{ maxWidth: "fit-content" }}
                           >
                             {message.text}
@@ -186,7 +186,7 @@ function Chatlayout() {
               })}
           </div>
           {/* Text input section */}
-          <div className="w-full mb-2 justify-between items-center">
+          <div className="w-full px-2 mb-2 justify-between items-center">
             <div className="w-[25%]"></div>
             <div className="w-[98%] mx-auto 800px:w-[50%]">
               <div className="relative justify-center items-center">
