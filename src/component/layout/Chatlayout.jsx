@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import Sidebar from "./sidebar";
 import {io} from "socket.io-client"
 import Header from "./Header";
-import { useParams } from "react-router-dom";
-import { AiOutlinePaperClip, AiOutlineSend } from "react-icons/ai";
+import { useParams,useNavigate } from "react-router-dom";
+import { AiOutlinePaperClip, AiOutlineSend, AiOutlineArrowRight } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { format } from "timeago.js";
@@ -19,6 +19,7 @@ function Chatlayout() {
   const [text, setText] = useState("");
   const [messages, setMessages] = useState([]);
   const [incomingMessage,setInComigMessage] = useState(null)
+  const navigate = useNavigate()
 
   const { id } = useParams();
   const conversationId = id;
@@ -120,9 +121,9 @@ function Chatlayout() {
       containerRef.current.scrollTop = containerRef.current.scrollHeight;
     }
   }, [messages]);
-
-  
-
+  const handleClick = () =>{
+    navigate("/")
+  }
   return (
     <>
       <div className="flex 800px:mx-5 !mx-0">
@@ -130,13 +131,16 @@ function Chatlayout() {
           <Sidebar />
         </div>
         <div className=" 800px:ml-2 w-[100%] 800px:w-[75%] relative justify-between flex flex-col h-screen bg-white">
-        <div className="bg-blue-400 h-[65px] w-full px-2">
+        <div className="bg-blue-400 h-[65px] w-full px-2 justify-between items-center">
           <div className="w-[50px] h-[50px] flex  rounded-full justify-center items-center bg-neutral-400">
             <h2 className="text-red-500 font-bold  text-center text-xl">
               {receiver?.name[0]}
             </h2>
           </div>
-</div>
+          <div>
+            < AiOutlineArrowRight color="black" size={25} onClick={handleClick} />
+          </div>
+        </div>
           <div
             className="h-[100vh] overflow-y-scroll overflow-x-hidden w-full"
             ref={containerRef}
