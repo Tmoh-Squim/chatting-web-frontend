@@ -61,7 +61,7 @@ function Chatlayout() {
       });
       await axios
         .post(
-          "http://localhost:8081/api/v2/message/create-new-message",
+          "https://chatting-web-app-2xe3.onrender.com/api/v2/message/create-new-message",
           { text: text, sender: me, conversationId: conversationId },
           {
             headers: {
@@ -85,7 +85,7 @@ function Chatlayout() {
     });
     await axios
       .put(
-        `http://localhost:8081/api/v2/conversation/update-conversation/${conversationId}`,
+        `https://chatting-web-app-2xe3.onrender.com/api/v2/conversation/update-conversation/${conversationId}`,
         { lastMessage: text, lastMessageId: me },
         {
           headers: {
@@ -102,7 +102,7 @@ function Chatlayout() {
   useEffect(() => {
     const getMessages = async () => {
       const res = await axios.get(
-        `http://localhost:8081/api/v2/message/get-messages/${conversationId}`,
+        `https://chatting-web-app-2xe3.onrender.com/api/v2/message/get-messages/${conversationId}`,
         {
           headers: {
             Authorization: token,

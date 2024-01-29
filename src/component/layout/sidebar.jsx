@@ -63,7 +63,7 @@ function Sidebar() {
       const senderId = user?._id;
       const receiverId = receiver?._id;
       const response = await axios.post(
-        "http://localhost:8081/api/v2/conversation/create-new-conversation",
+        "https://chatting-web-app-2xe3.onrender.com/api/v2/conversation/create-new-conversation",
         {
           groupTitle: groupTitle,
           senderId: senderId,
