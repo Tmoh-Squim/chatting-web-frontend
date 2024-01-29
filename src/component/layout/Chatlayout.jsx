@@ -199,11 +199,11 @@ function Chatlayout() {
                   onChange={(e) => setText(e.target.value)}
                 />
               </div>
-              <div className="absolute bottom-4 left-2.5 800px:left-[25%]">
+              <div className="absolute bottom-4 left-3 800px:left-[25%]">
                 <AiOutlinePaperClip size={28} color="gray" />
               </div>
               <div
-                className="absolute bottom-4 right-2.5 800px:right-[26%]"
+                className="absolute bottom-4 right-3 800px:right-[26%]"
                 onClick={handleChat}
               >
                 <AiOutlineSend size={28} color="gray" />
