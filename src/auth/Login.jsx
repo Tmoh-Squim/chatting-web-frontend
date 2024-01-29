@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import { AiOutlineEye,AiOutlineEyeInvisible } from "react-icons/ai";
 import axios from "axios"
-import {useNavigate} from "react-router-dom"
+import {useNavigate,Link} from "react-router-dom"
 import {useSelector} from "react-redux"
 function Login() {
     const [visible,setVisible] = useState(false)
@@ -23,7 +23,7 @@ function Login() {
     }
     useEffect(() => {
       if (user?.user){
-        navigate('/')
+        navigate('/home')
       }
     }, [user]);
     
@@ -81,6 +81,8 @@ function Login() {
             <h2 className="text-xl text-white font-semibold text-center">Login</h2>
           </button>
         </div>
+
+       <p>don't have an account? <Link to="/register">Create</Link></p> 
       </div>
   </>;
 }

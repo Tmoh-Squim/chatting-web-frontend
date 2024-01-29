@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { AiOutlineEye,AiOutlineEyeInvisible } from "react-icons/ai";
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,Link} from 'react-router-dom'
 import axios from "axios"
 function Register() {
     const [visible,setVisible] = useState(false)
@@ -135,6 +135,7 @@ function Register() {
           <button type="submit" onClick={handleSubmit} className="p-2 bg-red-500 rounded-lg w-[30%] my-2 mx-2">
             <h2 className="text-xl text-white font-semibold text-center">Submit</h2>
           </button>
+          <p>already have an account? <Link to="/login">Login</Link></p> 
         </div>
       </div>
     </>

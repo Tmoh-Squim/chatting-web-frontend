@@ -37,7 +37,8 @@ function App() {
   
   return <>
       <Routes>
-        <Route path="/" element={<MainContainer />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<MainContainer />} />
         <Route path="/chat/:id" element={<ChatContainer />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
