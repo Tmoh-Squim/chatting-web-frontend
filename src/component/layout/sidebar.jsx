@@ -197,7 +197,7 @@ function Sidebar() {
               onClick={() => handleCreateConversation(receiver)}
             >
               <div className="flex flex-row items-center ">
-                <div className="w-[35px] h-[35px] rounded-full bg-green-500 justify-center mx-2">
+                <div className="w-[35px] h-[35px] rounded-full bg-green-500 justify-center items-center flex mx-2">
                   <h2 className="text-center text-black font-bold text-xl">
                     {receiver.name[0]}
                   </h2>
