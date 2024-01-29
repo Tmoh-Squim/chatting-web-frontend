@@ -94,7 +94,7 @@ function Sidebar() {
     <>
       <div className="px-2 mt-4  h-screen">
         <div>
-          <div className="w-full h-10 bg-slate-100 shadow-lg justify-center items-center">
+          <div className="w-full rounded-xl h-10 bg-slate-100 shadow-lg justify-center items-center">
             <input
               type="text"
               placeholder="search..."
