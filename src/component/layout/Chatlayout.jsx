@@ -125,11 +125,11 @@ function Chatlayout() {
 
   return (
     <>
-      <div className="flex 800px:mx-5 !m-0">
+      <div className="flex 800px:mx-5 !mx-0">
         <div className=" 800px:w-[25%] hidden 800px:block overflow-y-scroll h-screen bg-white">
           <Sidebar />
         </div>
-        <div className="ml-2 w-[100%] 800px:w-[75%] relative justify-between flex flex-col h-screen bg-white">
+        <div className=" 800px:ml-2 w-[100%] 800px:w-[75%] relative justify-between flex flex-col h-screen bg-white">
         <div className="bg-blue-400 h-[65px] w-full px-2">
           <div className="w-[50px] h-[50px] flex  rounded-full justify-center items-center bg-neutral-400">
             <h2 className="text-red-500 font-bold  text-center text-xl">
@@ -152,9 +152,9 @@ function Chatlayout() {
                       } flex w-full my-1.5 `}
                     >
                       {senderMessage ? (
-                        <div className="flex flex-col w-[70%] justify-end items-end">
+                        <div className="flex flex-col w-[70%] 800px:w-[65%] justify-end items-end">
                           <p
-                            className=" bg-blue-500 p-1 text-end text-black rounded-xl h-min inline-block "
+                            className=" bg-blue-500 p-1  text-black rounded-xl h-min inline-block "
                             style={{ maxWidth: "fit-content" }}
                           >
                             {message.text}
@@ -166,7 +166,7 @@ function Chatlayout() {
                           </p>
                         </div>
                       ) : (
-                        <div className="flex flex-col w-[70%]">
+                        <div className="flex flex-col w-[70%] 800px:w-[65%]">
                           <div
                             className=" bg-neutral-500 p-1 text-black rounded-lg h-min inline-block"
                             style={{ maxWidth: "fit-content" }}
