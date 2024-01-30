@@ -21,7 +21,6 @@ export const getAllusers =  createAsyncThunk('all-users',async()=>{
                 'Authorization':token
             }
         })
-        console.log('res',res)
       return res.data
     } catch (error) {
         console.log(error)
