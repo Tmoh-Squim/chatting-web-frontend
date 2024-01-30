@@ -29,6 +29,8 @@ function Chatlayout() {
 
   useEffect(() => {
     socket.on("getMessage", (data) => {
+      console.log('data',data);
+      
       const newMessage = {
         sender: data.senderId,
         text: data.text,
