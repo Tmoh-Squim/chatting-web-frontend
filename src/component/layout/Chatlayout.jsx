@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Sidebar from "./sidebar";
-import socketIO from "socket.io-client"
+import {io} from "socket.io-client"
 import Header from "./Header";
 import { useParams,useNavigate } from "react-router-dom";
 import { AiOutlinePaperClip, AiOutlineSend, AiOutlineArrowRight } from "react-icons/ai";
@@ -11,7 +11,7 @@ const token = `${localStorage.getItem("token")}`;
 const ENDPOINT= "https://chatting-socket-c5k9.onrender.com"
 function Chatlayout() {
   const { user } = useSelector((state) => state.user?.user);
-  const socket = socketIO(ENDPOINT, { transports: ["websocket"] });
+  const socket = io(ENDPOINT, { transports: ["websocket"] });
   const { conversations } = useSelector(
     (state) => state.conversations.conversations
   );

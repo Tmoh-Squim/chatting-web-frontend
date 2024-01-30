@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import  socketIO  from "socket.io-client";
+import { io } from "socket.io-client";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
@@ -7,7 +7,7 @@ import { format } from "timeago.js";
 
 const ENDPOINT = "https://chatting-socket-c5k9.onrender.com";
 function Sidebar() {
-  const socket = socketIO(ENDPOINT, { transports: ["websocket"] });
+  const socket = io(ENDPOINT, { transports: ["websocket"] });
   const { allUsers } = useSelector((state) => state.allUsers);
   const { user } = useSelector((state) => state.user.user);
   const [onlineUsers, setOnlineUsers] = useState([]);

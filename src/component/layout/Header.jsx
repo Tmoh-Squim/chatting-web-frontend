@@ -20,7 +20,7 @@ const Header = () => {
     
   return <>
   <div className={`${active === true? 'fixed top-0 z-30 left-0 right-0 w-full h-[70px] bg-blue-500 items-center' : 'relative'} w-full h-[70px] justify-between items-center bg-blue-500`}>
-  <div className="w-[50px] h-[50px] rounded-full items-center justify-center mt-auto flex bg-neutral-500" onClick={()=>navigate("/user-profile")}>
+  <div className="w-[50px] h-[50px] rounded-full items-center justify-center mt-auto flex cursor-pointer bg-neutral-500" onClick={()=>navigate("/user-profile")}>
   <h3 className="text-xl text-green-500 text-center">
     {user?.name[0]}
   </h3>
