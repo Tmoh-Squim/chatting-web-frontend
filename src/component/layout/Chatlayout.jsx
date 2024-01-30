@@ -113,7 +113,7 @@ function Chatlayout() {
       setMessages(res.data.messages);
     };
     getMessages();
-  }, [currentConversation]);
+  }, [id]);
 
   useEffect(() => {
     // Check if containerRef.current is not null before setting scrollTop
