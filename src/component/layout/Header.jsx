@@ -19,7 +19,7 @@ const Header = () => {
     console.log(active)
     
   return <>
-  <div className={`${active === true? 'fixed top-0 z-30 left-0 right-0 w-full h-[70px] bg-blue-500' : 'relative'} w-full h-[70px] justify-between items-center bg-blue-500`}>
+  <div className={`${active === true? 'fixed top-0 z-30 left-0 right-0 w-full h-[70px] bg-blue-500 items-center' : 'relative'} w-full h-[70px] justify-between items-center bg-blue-500`}>
   <div className="w-[50px] h-[50px] rounded-full items-center justify-center flex bg-neutral-500" onClick={()=>navigate("/user-profile")}>
   <h3 className="text-xl text-green-500 text-center">
     {user?.name[0]}

@@ -10,6 +10,7 @@ import {useDispatch,useSelector} from "react-redux"
 import store from "./redux/store"
 import {LoadUser,getAllusers} from "./redux/users"
 import {getAllConversation} from "./redux/conversations"
+import UserProfile from "./component/user/UserProfile"
 
 const ENDPOINT = "https://chatting-socket-c5k9.onrender.com"
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Route path="/chat/:id" element={<ChatContainer />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/user-profile" element={<UserProfile />} />
       </Routes>
   </>
 }
