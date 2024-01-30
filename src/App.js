@@ -28,7 +28,6 @@ function App() {
   }, [user]);
 
   useEffect(() => {
-    const userId = user?._id
     socket.emit('connection')
     socket.emit('join',({userId:id}))
     socket.on('getUsers',(data)=>{
