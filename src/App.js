@@ -35,6 +35,13 @@ function App() {
       setOnlineUsers(data)
     })
   }, [user]);
+  useEffect(() => {
+    socket.on("getMessage",(data)=>{
+      console.log("incomming",data);
+      
+    })
+  }, []);
+  
   
   return <>
       <Routes>
