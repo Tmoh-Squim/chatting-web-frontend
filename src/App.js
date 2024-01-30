@@ -28,13 +28,14 @@ function App() {
   }, [user]);
 
   useEffect(() => {
-    const id = user?._id
+    const userId = user?._id
     socket.emit('connection')
-    socket.emit('join',({userId:id}))
+    socket.emit('join',userId)
     socket.on('getUsers',(data)=>{
       setOnlineUsers(data)
     })
   }, [user]);
+  console.log('online',onlineUsers)
   
   return <>
       <Routes>
