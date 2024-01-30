@@ -158,7 +158,7 @@ function Chatlayout() {
                       {senderMessage ? (
                         <div className="flex flex-col w-[70%] 800px:w-[65%] justify-end items-end">
                           <p
-                            className=" bg-blue-500 p-1  text-black rounded-xl h-min inline-block "
+                            className=" bg-blue-500 py-1 px-2  text-black rounded-xl h-min inline-block "
                             style={{ maxWidth: "fit-content" }}
                           >
                             {message.text}
@@ -172,7 +172,7 @@ function Chatlayout() {
                       ) : (
                         <div className="flex flex-col w-[70%] 800px:w-[65%]">
                           <div
-                            className=" bg-neutral-500 p-1 text-black rounded-lg h-min inline-block"
+                            className=" bg-neutral-500 py-1 px-2 text-black rounded-lg h-min inline-block"
                             style={{ maxWidth: "fit-content" }}
                           >
                             {message.text}
