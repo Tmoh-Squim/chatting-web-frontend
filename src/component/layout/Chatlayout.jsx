@@ -28,16 +28,13 @@ function Chatlayout() {
   const currentConversation = conversations?.find(conversation => conversation._id === id);
 
   useEffect(() => {
-    socket.on("getMessage", (data) => {
-      console.log('data',data);
-      
+    socket.on("getMessage", (data) => {      
       const newMessage = {
         sender: data.senderId,
         text: data.text,
         createdAt: Date.now(),
       };
         console.log('newmsg',newMessage);
-
       setInComigMessage(newMessage);
       // Append the new message to the existing messages
       setMessages(prevMessages => [...prevMessages, newMessage]);
@@ -53,7 +50,9 @@ function Chatlayout() {
   const receiverId = currentConversation?.members?.find((member)=>member !== me)
   const receiver = allUsers?.users?.find((user)=>user._id === receiverId)
 
-  const handleChat = async () => {
+  
+  const handleChat = async (e) => {
+    e.preventDefault()
     if (text === "") {
       return;
     } else {
@@ -84,7 +83,6 @@ function Chatlayout() {
     socket.emit("updateLastMessage", {
       lastMessage: text,
       lastMessageId: me,
-      receiverId:receiverId
     });
     await axios
       .put(
@@ -115,7 +113,7 @@ function Chatlayout() {
       setMessages(res.data.messages);
     };
     getMessages();
-  }, [id]);
+  }, [currentConversation]);
 
   useEffect(() => {
     // Check if containerRef.current is not null before setting scrollTop
